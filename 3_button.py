@@ -26,9 +26,26 @@ class MyGrid(GridLayout):
         self.inside.add_widget(self.wiek)
 
         self.add_widget(self.inside)
+
         self.submit = Button(text="Wyslij", font_size=40)
+        self.submit.bind(on_press=self.submit_pressed)
         self.add_widget(self.submit)
 
+        self.erase = Button(text="Czysc", font_size=40)
+        self.erase.bind(on_press=self.erased_pressed)
+        self.add_widget(self.erase)
+
+    def submit_pressed(self, instance):
+        print('przycisk wcisniety')
+        imie = self.imie.text
+        nazwisko = self.nazwisko.text
+        wiek = self.wiek.text
+        print(f'Czesc {imie} {nazwisko}, twoj wiek to {wiek}.')
+
+    def erased_pressed(self, instance):
+        self.imie.text = ''
+        self.nazwisko.text = ''
+        self.wiek.text = ''
 
 class MyApp(App):
     def build(self):
