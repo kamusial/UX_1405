@@ -21,6 +21,7 @@ class SecondWindow(Screen):
     pass
 
 class WindowsManager(ScreenManager):
+    pass
 
 kv = Builder.load_file('my8.kv')
 
