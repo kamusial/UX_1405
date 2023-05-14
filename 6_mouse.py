@@ -8,10 +8,14 @@ from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.widget import Widget
 from kivy.properties import ObjectProperty
 
-class MyApp(App):
+class Touch(Widget):
+    def on_touch_down(self, touch):
+        print('Mysz wcisnieta',touch)
+
+class My6App(App):
     def build(self):
-        return
+        return Touch()
 
 
 if __name__ == "__main__":
-    MyApp().run()
+    My6App().run()
