@@ -1,17 +1,32 @@
 <MyGrid>
+    p_imie: imie
+    p_nazw: nazwisko
+    p_wiek: wiek
     GridLayout:
-        cols: 2
-        Label:
-            text: "Imie:"
-        TextInput:
-            multiline: False
-        Label:
-            text: "Nazwisko:"
-        TextInput:
-            multiline: False
-        Label:
-            text: "Wiek:"
-        TextInput:
-            multiline: False
+        cols: 1
+        #size: 400, 500
+        size: root.width-100, root.height-100
+        pos: 50, 50
+        GridLayout:
+            cols: 2
+            Label:
+                text: "Imie:  "
+            TextInput:
+                id: imie
+                multiline: False
+            Label:
+                text: "Nazwisko:  "
+            TextInput:
+                id:nazwisko
+                multiline: False
+            Label:
+                text: "Wiek:  "
+            TextInput:
+                id: wiek
+                multiline: False
         Button:
             text: "Slij"
+            on_press:root.submit_pressed()
+        Button:
+            text: "Czysc"
+            on_press:root.erased_pressed()
