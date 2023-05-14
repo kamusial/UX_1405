@@ -17,14 +17,20 @@ class Touch(Widget):
 
         with self.canvas:
             Color(1, 0, 0, 0.7, mode='rgba')
-            self.rect1 = Rectangle(pos=(0,0), size=(80,300))
+            self.rect1 = Rectangle(pos=(200,100), size=(80,90))
+            Color(0, 1, 0, 0.7, mode='rgba')
+            self.rect2 = Rectangle(pos=(0,0), size=(80,300))
+            Color(0, 0, 1, 0.7, mode='rgba')
+            self.rect3 = Rectangle(pos=(400,300), size=(220,100))
 
 
     def on_touch_down(self, touch):
         print('Mysz wcisnieta',touch.pos)
         self.btn.opacity = 0.3
+        self.rect1.pos = touch.pos
     def on_touch_move(self, touch):
         print('Ruch myszą', touch)
+        self.rect2.pos = touch.pos
     def on_touch_up(self, touch):
         print('mysz odcisnieta',touch.spos)
         self.btn.opacity = 1
